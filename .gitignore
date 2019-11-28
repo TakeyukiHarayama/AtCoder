@@ -110,3 +110,4 @@ DerivedData/
 # End of https://www.gitignore.io/api/c,c++,xcode
 template
 **/main
+*.swp

@@ -1,0 +1,4 @@
+{
+    "editor.autoClosingBrackets": "never",
+    "C_Cpp.clang_format_fallbackStyle": "Google"
+}
