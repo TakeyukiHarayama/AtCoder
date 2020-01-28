@@ -112,3 +112,5 @@ template
 **/main
 *.swp
 */.vscode/settings.json
+*/settings.json
+*/.vscode
