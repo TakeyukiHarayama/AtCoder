@@ -1,36 +1,27 @@
-#include <math.h>
-#include <cstdlib>
 #include <iostream>
 #include <vector>
 
 using namespace std;
 
 int main(int argc, const char* argv[]) {
-  int a, b, c;
-
-  cin >> a >> b;
-
-  if(a < b){
-    c = a;
-    for (int i = 0; i < b-1; i++) {
-      c = c * 10;
-      c += a;
-    }
-    cout << c << endl;
-  }else if(a > b){
-    c = b;
-    for (int i = 0; i < a-1; i++) {
-      c = c * 10;
-      c += b;
-    }
-    cout << c << endl;
-  }else{
-    c = b;
-    for (int i = 0; i < a-1; i++) {
-      c = c * 10;
-      c += b;
-    }
-    cout << c << endl;
+  int N, K, M, a;
+  int sum = 0;
+  cin >> N >> K >> M;
+  vector<int> A(N - 1);
+  
+  for(int i = 0; i<N-1; i++){
+    cin >> A[i];
+    sum += A[i];
   }
+
+  a = N * M - sum;
+  if(a > K){
+    cout << "-1" << endl;
+  } else if(a <= 0){
+    cout << "0" << endl;
+  } else {
+    cout << a << endl;
+  }
+
   return 0;
 }
