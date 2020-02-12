@@ -11,7 +11,8 @@ int main(int argc, const char* argv[]) {
   cin >> N >> M;
   vector<int> p(M);
   vector<int> WAC(M);
-  vector<int> status(M);
+  vector<int> WA(N);
+  vector<int> status(N);
   string S;
 
   for (int i = 0; i < M; i++) {
@@ -21,7 +22,10 @@ int main(int argc, const char* argv[]) {
     }else{
       WAC[i] = 0;
     }
+  }
+  for (int i = 0; i < N; i++) {
     status[i] = 0;
+    WA[i] = 0;
   }
 
   if (M == 0) {
@@ -30,12 +34,14 @@ int main(int argc, const char* argv[]) {
   }
 
   for (int i = 0; i < M; i++) {
-    if (WAC[i] == 0 && status[p[i]-1] == 0) {
-      WAcount++;
-    }
-    if (WAC[i] == 1 && status[p[i]-1] == 0) {
-      ACcount++;
-      status[p[i]-1] = 1;
+    if (status[p[i]-1] == 0) {
+      if (WAC[i] == 1) {
+        status[p[i] - 1] = 1;
+        WAcount += WA[p[i] - 1];
+        ACcount++;
+      }else{
+        WA[p[i] - 1]++;
+      }
     }
   }
 
