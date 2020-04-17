@@ -1,6 +1,4 @@
-#include <cstdlib>
 #include <iostream>
-#include <math.h>
 #include <vector>
 #include <numeric>
 
@@ -8,26 +6,18 @@ using namespace std;
 
 int main(int argc, const char *argv[]) {
   int N;
-  long int comp;
-
+  double res = 0;
   cin >> N;
-  vector<long int> A(N);
+  vector<long int> V(N);
   for (int i = 0; i < N; i++) {
-    cin >> A[i];
+    cin >> V[i];
   }
 
-  sort(A.begin(), A.end());
-
-  comp = A[0];
-  for (int i = 1; i < N; i++) {
-    if(A[i] ==  comp){
-      cout << "NO" << endl;
-      return 0;
-    }
-    comp = A[i];
+  sort(V.begin(), V.end());
+  res = (V[0] + V[1]) / 2.0;
+  for (int i = 2; i < N; i++) {
+    res = (res + V[i]) / 2.0;
   }
-
-  cout << "YES" << endl;
-
+  printf("%f\n", res);
   return 0;
 }
