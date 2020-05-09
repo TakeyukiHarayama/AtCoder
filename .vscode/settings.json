@@ -8,6 +8,9 @@
         "*.tcc": "cpp",
         "ostream": "cpp",
         "utility": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "iterator": "cpp",
+        "iosfwd": "cpp",
+        "algorithm": "cpp"
     }
 }
